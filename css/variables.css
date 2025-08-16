@@ -56,6 +56,16 @@
 	--black-80: rgba(0, 0, 0, 80%);
 	--black-90: rgba(0, 0, 0, 90%);
 
+	/* sfcms gray */
+	--gray-10: #F5F5F5;
+	--gray-20: #DDDDDD;
+	--gray-30: #CCCCCC;
+	--gray-40: #AAAAAA;
+	--gray-50: #7D8789;
+	--gray-60: #707070;
+	--gray-70: #555555;
+	--gray-80: #333333;
+
 	/* sfcms accent */
 	--accent-1: #008BC9;
 	--accent-2: #0053A2;
@@ -77,6 +87,16 @@
 	--tbody-font-size: 14px;
 	
 	--white: #ffffff;
+
+	--text-1: var(--gray-80);
+	--text-2: var(--gray-60);
+	--text-3: var(--gray-40);
+
+	--border-1: var(--gray-30);
+	--border-2: var(--gray-20);
+	--border-3: #0090D124;
+	--border-4: #008BC966;
+	--border-5: #0000001A;
 
 	/* 폰트 */
 	--font-family-base: 'Noto Sans KR', sans-serif;

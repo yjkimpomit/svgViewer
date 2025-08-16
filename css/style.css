@@ -78,12 +78,12 @@ a {
 #svgarea {
 	max-width: 100%;
 	position: relative;
-	border: 1px solid #D7DDE6;
+	border: 1px solid var(--border-1);
 	box-shadow: 0 0 5px 0 rgba(214, 218, 229, 40%);
 	border-radius: .25rem;
 	overflow: hidden;
 
-	background-color: white;
+	background-color: var(--white);
 	height: calc(100% - 3rem);
 }
 
@@ -91,12 +91,12 @@ a {
 .file-link,
 .btn {
 	font-size: .875rem;
-	font-weight: 500;
+	font-weight: var(--font-weight-regular);
 	padding: calc(.75rem - 1px) 1rem;
 	height: 2.5rem;
 	letter-spacing: -0.05rem;
 
-	border: 1px solid #D3D7E0;
+	border: 1px solid var(--border-1);
 	border-radius: .25rem;
 	overflow: hidden;
 	cursor: pointer;
@@ -138,7 +138,7 @@ a {
 
 .file-link {
 	font-size: 1rem;
-	font-weight: 400;
+	font-weight: var(--font-weight-regular);
 	text-align: left;
 
 	display: block;	
@@ -148,23 +148,23 @@ a {
 	overflow: hidden;
 	text-overflow: ellipsis;
 
-	background-color: #FFFFFF;
-	border: 1px solid #DDE2F0;
-	color: #242424;
+	background-color: var(--accent-1);
+	border: 1px solid var(--accent-1);
+	color: var(--white);
 	
 	cursor: pointer;
 
-	background-image: url('/images/draft_24dp_D7DDE6_FILL1_wght200_GRAD0_opsz24.svg');
+	background-image: url('/images/description_24dp_FFFFFF_FILL0_wght300_GRAD0_opsz24.svg');
 	background-repeat: no-repeat;
-	background-size: 24px;
+	background-size: auto;
 	background-position: left .5rem center;
-	padding-left: 2.5rem;
+	padding-left: 2.25rem;
 }
 
 .file-link:hover,
 .file-link.active,
 .file-link.active:hover {
-	color: white;
+	color: var(--white);
 	background-color: var(--accent-3);
 	border-color: var(--accent-3);
 }
@@ -181,11 +181,11 @@ a {
 	flex: 0 0 auto;
 
 	font-size: 1rem;
-	font-weight: 500;
+	font-weight: var(--font-weight-regular);
 	text-align: center;
 
-	background-color: #FFFFFF;
-	border: 1px solid #DDE2F0;
+	background-color: var(--bg-2);
+	border: 1px solid var(--accent-1);
 	color: var(--accent-2);
 }
 
@@ -200,20 +200,50 @@ a {
 .btn-secondary.disabled,
 .btn-secondary.disabled:hover {
 	cursor: default;
-	color: #999999;
-	background-color: #FFFFFF;
-	border-color: #D0D0D0;
+
+	display: inline-flex;
+	flex: 0 0 auto;
+	
+	background-color: var(--bg-1);
+	border: 1px solid var(--border-1);
+	color: var(--text-2);
+	
+	opacity: .8;
 }
 
 /* form elements */
-.form-select,
-.form-control {
+.form-select {
+	color: var(--text-1);
 	font-size: 1rem;
-	font-weight: 500;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	font-weight: var(--font-weight-regular);
+	padding-left: .75rem;
+	padding-right: 2rem;
 	
-	border: 1px solid #D3D7E0;
+	border: 1px solid var(--border-2);
+	border-radius: .25rem;
+	overflow: hidden;
+
+	line-height: 2.5rem;
+	height: 2.5rem;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	background-image: url('/images/keyboard_arrow_down_24dp_333333_FILL0_wght400_GRAD0_opsz24.svg');
+	background-repeat: no-repeat;
+	background-position: right .25rem center;
+	background-size: auto 24px;
+}
+
+.form-control {
+	color: var(--text-1);
+	font-size: 1rem;
+	font-weight: var(--font-weight-regular);
+	padding-left: .75rem;
+	padding-right: .75rem;
+	
+	border: 1px solid var(--border-2);
 	border-radius: .25rem;
 	overflow: hidden;
 
@@ -221,17 +251,9 @@ a {
 	height: 2.5rem;
 }
 
-.form-select {
-	padding-left: 1rem;
-	padding-right: 2.5rem;
-
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	background-image: url('/images/keyboard_arrow_down_24dp_242424_FILL1_wght500_GRAD0_opsz24.svg');
-	background-repeat: no-repeat;
-	background-position: right .5rem center;
-	background-size: auto 24px;
+.form-control::placeholder {
+	opacity: .8;
+	font-weight: var(--font-weight-regular);
 }
 
 /* selectorArea */
@@ -246,15 +268,11 @@ a {
 .selectorArea>.form-select {
 	min-width: 0;
 }
+
 .selectorArea>.form-control {
 	flex: 1;
 	max-width: 100%;
 	min-width: 0;
-}
-
-.selectorArea>.form-control::placeholder {
-	opacity: .8;
-	font-weight: 400;
 }
 
 .selectorArea .btn {
@@ -270,7 +288,7 @@ a {
 .selectorArea .btn.search {
 	background-color: var(--accent-2);
 	border: 1px solid var(--accent-3);
-	background-image: url('/images/search_24dp_FFFFFF_FILL0_wght300_GRAD0_opsz24.svg');
+	background-image: url('/images/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg');
 }
 
 .selectorArea .btn.search:hover {
@@ -279,15 +297,15 @@ a {
 }
 
 .selectorArea .btn.reset {
-	color: #242424;
-	background-color: #EAECF0;
-	border: 1px solid #D3D7E0;
-	background-image: url('/images/replay_24dp_242424_FILL1_wght200_GRAD0_opsz24.svg');
+	color: var(--text-1);
+	background-color: var(--bg-1);
+	border: 1px solid var(--border-2);
+	background-image: url('/images/replay_24dp_333333_FILL0_wght400_GRAD0_opsz24.svg');
 }
 
 .selectorArea .btn.reset:hover {
-	background-color: #FFFFFF;
-	border: 1px solid #D3D7E0;
+	background-color: var(--white);
+	border: 1px solid var(--border-2);
 }
 
 /* table */
@@ -297,8 +315,8 @@ a {
 	border-radius: .25rem;
 	overflow: hidden;
 	overflow-y: auto;
-	background-color: #F7F8FA;
-	border: 1px solid #E1E4EB;
+	background-color: var(--bg-1);
+	border: 1px solid var(--border-2);
 }
 
 .table {
@@ -310,7 +328,7 @@ a {
 
 .table th,
 .table td {
-	color: #242424;
+	color: var(--text-1);
 
 	text-align: center;
 	padding: .25rem .5rem;
@@ -323,9 +341,9 @@ a {
 }
 
 .table thead th {
-	font-weight: 700;
-	border-bottom: 1px solid #E1E4EB;
-	background-color: #F2F3F5;
+	font-weight: var(--font-weight-bold);
+	border-bottom: 1px solid var(--border-2);
+	background-color: var(--bg-1);
 
 	position: sticky;
 	top: 0;
@@ -334,13 +352,13 @@ a {
 }
 
 .table tbody td {
-	background-color: #FFFFFF;
-	border-bottom: 1px solid #E1E4EB;
+	background-color: var(--white);
+	border-bottom: 1px solid var(--border-2);
 	height: 2.875rem;
 }
 
 .table tbody tr:hover td {
-	background-color: #F7F8FA;
+	background-color: var(--bg-1);
 }
 
 /* 순번칼럼 너비 */
@@ -352,13 +370,6 @@ a {
 .table thead th:nth-child(5) {
 	width: 6rem;
 }
-
-/* responsive */
-/* @media(max-width: 1440px) {
-	.file-box>li:first-child {
-		flex: 0;
-	}
-} */	
 
 @media(max-width: 992px) {
 	.file-box>li {
