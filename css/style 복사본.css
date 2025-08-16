@@ -1,0 +1,375 @@
+@charset "utf-8";
+
+/* 
+ * 포미트 : SVG Viewer
+ * 작성자 : 김윤지
+ * 작성일 : 2025.08.11
+ * 사용처 : 뷰어 화면디자인
+ */
+
+:root {
+	--white: #FFFFFF;
+	
+	--gray-30: #999999;
+	--gray-90: #242424;
+
+	--border-1: #D7DDE6;
+	--border-2: #DDE2F0;
+	--border-3: #EDF2FF;
+	--border-4: #EAECF0;
+	--border-5: #D0D0D0;
+	--border-6: #D3D7E0;
+	--border-7:	#F7F8FA;
+	--border-7:	#E1E4EB;
+	--border-9: #F2F3F5;
+	--border-10: #BBCCF5;
+
+	--accent-1: #124AD1;
+	--accent-2: #043DC7;
+
+	--text-1: var(--gray-90);
+	--text-2: var(--gray-30);
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+body {
+	line-height: 1;
+	font-size: 1rem;
+}
+body, div, a, p, span, ul, li, ol, dl, dt, dd, input, select, button {
+	padding: 0;
+	margin: 0;
+	font-family: "Noto Sans KR", sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* svg-wrapper */
+.svg-wrapper {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	gap: 1rem;
+
+	padding: 0;
+	height: 100vh;
+	min-height: 880px;
+	overflow: hidden;
+}
+
+.left {
+	flex: 1 0 72%;
+	max-width: 72%;
+}
+
+.right {
+	flex: 1;
+	min-width: 0;
+}
+
+/* svgarea */
+#svgarea {
+	flex: 1 0 100%;
+	max-width: 100%;
+	position: relative;
+	border: 1px solid var(--border-1);
+	box-shadow: 0 0 5px 0 rgba(214, 218, 229, 40%);
+	border-radius: .5rem;
+	overflow: hidden;
+
+	background-color: var(--white);
+	height: calc(100% - 3rem - 1rem);
+}
+
+/* 파일명 */
+.file-box {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+
+	max-width: 100%;
+	overflow: hidden;
+	gap: 1rem;
+}
+
+.file-box > li {
+	display: inline-flex;
+	align-items: center;
+}
+
+.file-box > li:first-child {
+	flex: 1;
+	min-width: 0;
+	padding-left: 0;
+}		
+.file-box > li:last-child {
+	padding-right: 0;
+}
+
+.file-box .file-link {
+	width: 100%;
+	height: 3rem;
+
+	font-size: 1rem;
+	font-weight: 400;
+	text-align: left;
+
+	display: block;
+	
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+	background-color: var(--white);
+	border: 1px solid var(--border-2);
+	color: var(--text-1);
+	border-radius: .75rem;
+	
+	line-height: 2.875rem;
+	padding-left: 3.375rem;
+	padding-right: 1rem;
+
+	cursor: pointer;
+	position: relative;
+	transition: all .3s ease-in-out;
+}
+
+.file-box .file-link::before {
+	content: '';
+	width: 2.25rem;
+	height: 2.25rem;
+
+	position: absolute;
+	left: .375rem;
+	top: 50%;
+	transform: translateY(-50%);
+
+	display: inline-flex;
+	border-radius: .5rem;
+    background-color: rgba(0, 120, 160, 4%);
+    border: 1px solid rgba(0, 120, 160, 6%);
+	background-image: url('/images/draft_24dp_D7DDE6_FILL1_wght200_GRAD0_opsz24.svg');
+	background-repeat: no-repeat;
+	background-size: 24px;
+	background-position: center;
+}
+
+.file-box .file-link:hover,
+.file-box .file-link.active,
+.file-box .file-link.active:hover {
+	color: var(--white);
+	background-color: var(--accent-1);
+	border: 1px solid var(--accent-2);
+}
+
+.file-box .file-link:hover::before,
+.file-box .file-link.active::before,
+.file-box .file-link.active::before {
+	background-color: rgba(255, 255, 255, 16%);
+    border: 1px solid rgba(255, 255, 255, 12%);
+}
+
+.file-box li:has(.btn) {
+	gap: .25rem;
+	justify-content: flex-end;
+}
+
+.file-box .btn-secondary {
+	width: auto;
+	height: 3rem;
+
+	font-size: 1rem;
+	font-weight: 500;
+	text-align: left;
+
+	display: block;
+
+	background-color: var(--white);
+	border: 1px solid var(--border-2);
+	color: var(--accent-1);
+	border-radius: .75rem;
+	
+	line-height: 2.875rem;
+	padding-left: 2.5rem;
+	padding-right: 1rem;
+
+	cursor: pointer;
+	position: relative;
+	transition: all .3s ease-in-out;
+	
+	background-image: url('/images/docs_24dp_124AD1_FILL1_wght200_GRAD0_opsz24.svg');
+	background-repeat: no-repeat;
+	background-size: 24px;
+	background-position: left .75rem center;
+}
+
+.file-box .btn-secondary:hover,
+.file-box .btn-secondary.active:hover
+.file-box .btn-secondary.active {
+	color: var(--accent-1);
+	background-color: var(--border-3);
+	background-image: url('/images/docs_24dp_124AD1_FILL1_wght200_GRAD0_opsz24.svg');
+	border-color: var(--border-10);
+}
+
+.file-box .btn-secondary.disabled,
+.file-box .btn-secondary.disabled:hover {
+	cursor: default;
+	color: var(--text-2);
+	background-color: var(--white);
+	background-image: url('/images/docs_24dp_999999_FILL0_wght200_GRAD0_opsz24.svg');
+	border-color: var(--border-5);
+}
+
+
+/* selectorArea */
+.selectorArea {
+	display: flex;
+	gap: .5rem;
+	margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.form-select,
+.form-control,
+.btn {
+	font-size: 1rem;
+	font-weight: 500;
+	padding-left: 2.875rem;
+	padding: 0 1rem;
+
+	height: 3rem;
+	border: 1px solid var(--border-6);
+	border-radius: .75rem;
+	overflow:hidden;
+}
+
+.selectorArea > .form-control {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.selectorArea > .form-control::placeholder {
+	opacity: .8;
+	font-weight: 400;
+}
+
+.form-select {
+	padding-right: 2.5rem;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: url('/images/keyboard_arrow_down_24dp_242424_FILL1_wght500_GRAD0_opsz24.svg');
+	background-repeat: no-repeat;
+	background-position: right .5rem center;
+	background-size: auto 24px;
+}
+
+.selectorArea .btn {
+	cursor: pointer;
+	color: var(--white);
+	white-space: nowrap;
+	line-height: 2.875rem;
+	min-width: 6rem;
+
+	background-repeat: no-repeat;
+	background-position: left 1rem center;
+	background-size: auto 24px;
+	padding-left: 2.875rem;
+	padding-right: 1.5rem;
+}
+.selectorArea .btn.search {
+	background-color: var(--accent-2);
+	border: 1px solid var(--accent-1);	
+	background-image: url('/images/search_24dp_FFFFFF_FILL0_wght300_GRAD0_opsz24.svg');
+}
+
+.selectorArea .btn.search:hover {
+	background-color: var(--accent-2);
+	border: 1px solid var(--accent-1);
+}
+
+.selectorArea .btn.reset {
+	min-width: 0;
+	padding-left: 2rem;
+	color: var(--text-1);
+	background-color: var(--border-4);
+	border: 1px solid var(--border-6);
+	background-image: url('/images/replay_24dp_242424_FILL1_wght200_GRAD0_opsz24.svg');
+
+	text-indent: -9999em;
+}
+
+.selectorArea .btn.reset:hover {
+	background-color: var(--white);
+	border: 1px solid var(--border-6);
+}
+
+/* table */
+.table-wrapper {
+	width: 100%;
+	height: calc(100% - 3rem - 1rem);
+	border-radius: .5rem;
+	overflow: hidden;
+	overflow-y: auto;
+	background-color: var(--border-7);
+	border: 1px solid var(--border-8);
+}
+
+.table {
+	table-layout: fixed;
+	border-collapse: separate;
+	border-spacing: 0;
+	width: 100%;
+}
+.table th, .table td {
+	color: var(--text-1);
+
+	text-align: center;
+	padding: .25rem .5rem;
+	vertical-align: middle;
+	white-space: nowrap;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+.table thead th {
+	font-weight: 700;
+	border-bottom: 1px solid var(--border-8);
+	background-color: var(--border-9);
+	
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	height: 2.75rem;
+}
+
+.table tbody td {
+	background-color: var(--white);
+	border-bottom: 1px solid var(--border-8);
+	height: 2.875rem;
+}
+.table tbody tr:hover td {
+	background-color: var(--border-7);
+}
+
+/* 순번칼럼 너비 */
+.table thead th:nth-child(1) {
+	width: 4rem;
+}
+
+/* ID칼럼 너비 */
+.table thead th:nth-child(5) {
+	width: 6rem;
+}

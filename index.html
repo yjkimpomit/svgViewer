@@ -4,13 +4,13 @@
 <head>
 	<meta charset="utf-8">
 	<title>SVG VIEWER</title>
-	<script src="lib/jquery-3.6.1.js"></script>
+	<!-- <script src="lib/jquery-3.6.1.js"></script>
 	<script src="lib/svg-pan-zoom.js"></script>
 	<script src="lib/svg.min.js"></script>
-	<!-- <script src="lib/svgViewerUtils.obs.js"></script>
-    <script src="lib/svgTableUtils.obs.js"></script> -->
+	<script src="lib/svgViewerUtils.obs.js"></script>
+    <script src="lib/svgTableUtils.obs.js"></script>
 	<script src="lib/svgViewerUtils.js"></script>
-	<script src="lib/svgTableUtils.js"></script>
+	<script src="lib/svgTableUtils.js"></script> -->
 	<!-- 
 	<style>
         #idTable {
@@ -70,7 +70,7 @@
 		<div class="left">
 			<ul class="file-box">
 				<li>
-					<a href="#" class="file-link active">파일명이 들어갑니다. 파일명이 들어갑니다. 파일명이 들어갑니다. 파일명이 들어갑니다. 파일명이 들어갑니다. 파일명이 들어갑니다.</a>
+					<a href="#" class="file-link">파일명이 들어갑니다. 파일명이 들어갑니다. 파일명이 들어갑니다. 파일명이 들어갑니다. 파일명이 들어갑니다. 파일명이 들어갑니다.</a>
 				</li>
 				<li>
 					<a href="#" class="btn btn-secondary disabled">운전 절차서</a>
@@ -100,8 +100,8 @@
 						<tr>
 							<th>순번</th>
 							<th>text(실제)</th>
-							<th>후처리</th>
-							<th>TEXT 값</th>
+							<!-- <th>후처리</th>
+							<th>TEXT 값</th> -->
 							<th>ID</th>
 						</tr>
 					</thead>
@@ -109,8 +109,8 @@
 						<tr>
 							<td>10</td>
 							<td>내용이 들어갑니다. 내용이 들어갑니다. 내용이 들어갑니다. 내용이 들어갑니다. 내용이 들어갑니다.</td>
-							<td>내용이 들어갑니다.</td>
-							<td>내용이 들어갑니다.</td>
+							<!-- <td>내용이 들어갑니다.</td>
+							<td>내용이 들어갑니다.</td> -->
 							<td>#759849</td>
 						</tr>
 					</tbody>
@@ -134,9 +134,9 @@
 			// 예시 : http://127.0.0.1:5500/index.html?dataPath=/pnid/0a84da95_1-7171-UM-105-002.svg
 			// 예시 : http://127.0.0.1:5500/index.html?dataPath=/pnid/G12J-11420-BM-105-001.svg&searchTag=SA
 			// url 경로로 접근 시 작동
-			initFromUrlParams();
+			//initFromUrlParams();
 			// 파일 업로드 시 작동
-			setupFileInputHandler();
+			//setupFileInputHandler();
 
 		});
 

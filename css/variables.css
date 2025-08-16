@@ -1,0 +1,176 @@
+@charset "utf-8";
+
+/* 
+ * 포미트 : 테스트베드
+ * 작성자 : 김윤지
+ * 작성일 : 2025.08.15
+ * 사용처 : 스타일 공통 변수 정의
+ */
+
+:root {
+	/* 
+	--hsl(0, 0%, 60%);
+	--hsl(216, 23%, 87%);
+	--hsl(220, 13%, 95%);
+	--hsl(220, 17%, 93%);
+	--hsl(220, 23%, 97%);
+	--hsl(222, 17%, 85%);
+	--hsl(222, 20%, 90%);
+	--hsl(222, 74%, 85%);
+	--hsl(223, 100%, 96%);
+	--hsl(224, 39%, 90%);
+	*/
+
+	/* svg gray */
+	--svg-gray-05: hsl(220, 23%, 97%);
+	--svg-gray-10: hsl(223, 100%, 96%);
+	--svg-gray-20: hsl(220, 13%, 95%);
+	--svg-gray-30: hsl(220, 17%, 93%);
+	--svg-gray-40: hsl(222, 20%, 90%);
+	--svg-gray-50: hsl(224, 39%, 90%);
+	--svg-gray-60: hsl(216, 23%, 87%);
+	--svg-gray-70: hsl(222, 17%, 85%);
+	--svg-gray-80: hsl(222, 74%, 85%);
+	--svg-gray-90: hsl(0, 0%, 60%);
+	
+	/* 색상 정의 */
+	--white-05: rgba(255, 255, 255, 5%);
+	--white-10: rgba(255, 255, 255, 10%);
+	--white-20: rgba(255, 255, 255, 20%);
+	--white-30: rgba(255, 255, 255, 30%);
+	--white-40: rgba(255, 255, 255, 40%);
+	--white-50: rgba(255, 255, 255, 50%);
+	--white-60: rgba(255, 255, 255, 60%);
+	--white-70: rgba(255, 255, 255, 70%);
+	--white-80: rgba(255, 255, 255, 80%);
+	--white-90: rgba(255, 255, 255, 90%);
+
+	--black-05: rgba(0, 0, 0, 5%);
+	--black-10: rgba(0, 0, 0, 10%);
+	--black-20: rgba(0, 0, 0, 20%);
+	--black-30: rgba(0, 0, 0, 30%);
+	--black-40: rgba(0, 0, 0, 40%);
+	--black-50: rgba(0, 0, 0, 50%);
+	--black-60: rgba(0, 0, 0, 60%);
+	--black-70: rgba(0, 0, 0, 70%);
+	--black-80: rgba(0, 0, 0, 80%);
+	--black-90: rgba(0, 0, 0, 90%);
+
+	/* sfcms accent */
+	--accent-1: #008BC9;
+	--accent-2: #0053A2;
+	--accent-3: #004387;
+	--accent-4: #25295B;
+
+	/* sfcms bg */
+	--bg-1: var(--gray-10);
+	--bg-2: #0090D11A;
+	--bg-3: #0090D166;
+	--bg-4: #01a8c9;
+
+	/* table */
+	--thead-border: var(--border-1);
+	--thead-bg: var(--color-white);
+
+	--thead-text-color: var(--gray-50);
+	--thead-font-size: 13px;
+	--tbody-font-size: 14px;
+	
+	--white: #ffffff;
+
+	/* 폰트 */
+	--font-family-base: 'Noto Sans KR', sans-serif;
+	--font-size-base: 16px;
+	--font-size-sm: 14px;
+	--font-size-lg: 18px;
+	--font-size-xl: 20px;
+	--font-size-xxl: 24px;
+
+	--font-weight-light: 300;
+	--font-weight-regular: 400;
+	--font-weight-bold: 700;
+
+	/* 간격 */
+	--spacing-xs: 4px;
+	--spacing-sm: 8px;
+	--spacing-md: 16px;
+	--spacing-lg: 24px;
+	--spacing-xl: 32px;
+	--spacing-xxl: 40px;
+	--spacing-xxxl: 48px;
+
+	--gutter-x: var(--spacing-xxxl);
+
+	/* 테두리 */
+	--radius-sm: 4px;
+	--radius-md: 8px;
+	--radius-lg: 16px;
+	--radius-full: 9999px;
+
+	/* 그림자 */
+	--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+	--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+	--shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+	/* 버튼 */
+	--btn-padding-x: 24px;
+	--btn-padding-y: 10px;
+	--btn-sm-padding-x: 16px;
+	--btn-sm-padding-y: 8px;
+
+	--btn-font-weight: var(--font-weight-regular);
+	--btn-font-size: var(--font-size-base);
+	--btn-line-height: 1;
+
+	--btn-border-width: 1px;
+	--btn-border-radius: .25rem;
+
+	/* 폼컨트롤 */
+	--form-btn-padding-x: 16px;
+	
+	--form-padding-x: 16px;
+	--form-padding-y: 10px;
+	--form-border-width: 1px;
+	--form-border-color: var(--border-1);
+	--form-border-active-color: var(--primary-1);
+	--form-border-radius: .25rem;
+
+	--form-width-md: 360px;
+	--form-width-lg: 400px;
+}
+
+/* scroll */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--black-05);
+	border-left: solid 1px var(--gray-20);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 3px;
+	background-color: var(--black-40);
+}
+
+::-webkit-scrollbar-button {
+	width: 0;
+	height: 0;
+}
+
+/* panel scroll */
+.split-panel ::-webkit-scrollbar-track {
+	background-color: var(--gray-20);
+}
+.split-panel ::-webkit-scrollbar-thumb {
+	background-color: var(--gray-40);
+}
+
+/* date, time picker icon */
+::-webkit-calendar-picker-indicator {
+	background: transparent;
+	cursor: pointer;
+}
+
