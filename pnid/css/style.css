@@ -57,12 +57,12 @@ a {
 	overflow: hidden;
 }
 
-.svg-wrapper .left {
+.svg-wrapper .viewer {
 	flex: 1;
 	max-width: calc(100% - 320px - 1rem);
 }
 
-.svg-wrapper .right {
+.svg-wrapper .data-list {
 	flex: 1;
 	max-width: 320px;
 }
@@ -99,7 +99,7 @@ a {
 	gap: .5rem;
 }
 
-.file-link a {
+.file-link .btn {
 	display: flex;
 	align-items: center;
 }

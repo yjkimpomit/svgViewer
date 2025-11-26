@@ -15,10 +15,10 @@
 <body>
 
 	<div class="svg-wrapper">
-		<div class="left">
+		<div class="viewer">
 			<div class="svg-header">
 				<div class="file-link">
-					<a href="1">
+					<a href="1" class="btn">
 						<span class="icon icon-description"></span>
 						<span class="text">DXAX-1F-LO-PP-01</span>
 					</a>
@@ -41,7 +41,7 @@
 			<div id="svgarea"></div>
 		</div>
 
-		<div class="right">
+		<div class="data-list">
 
 			<div class="selectorArea">
 				<select id="idSelector" class="form-select">
@@ -53,24 +53,39 @@
 				<button type="button" class="btn reset" onclick="handleResetTable()">복원</button>
 			</div>
 
-			<div class="table-wrapper">
+			<div class="table-responsive">
 				<table id="idTable" class="table">
 					<thead>
 						<tr>
-							<th>순번</th>
-							<th>text(실제)</th>
-							<!-- <th>후처리</th>
-							<th>TEXT 값</th> -->
-							<th>ID</th>
+							<th data-field="순번">순번</th>
+							<!-- SHOW_DEBUG_COLS check -->
+							<!-- <th data-field="실제">text(실제)</th> -->
+							<!-- <th data-field="후처리">후처리</th> -->
+							<th data-field="text-value">TEXT 값</th>
+							<th data-field="ID">ID</th>
 						</tr>
 					</thead>
 					<tbody id="idTableBody">
 						<tr>
-							<td>10</td>
-							<td>내용이 들어갑니다. 내용이 들어갑니다. 내용이 들어갑니다. 내용이 들어갑니다. 내용이 들어갑니다.</td>
-							<!-- <td>내용이 들어갑니다.</td>
-							<td>내용이 들어갑니다.</td> -->
-							<td>#759849</td>
+							<td data-field="순번">10</td>
+							<!-- <td data-field="실제">내용이 들어갑니다.</td>
+							<td data-field="후처리">내용이 들어갑니다.</td> -->
+							<td data-field="text-value">Plan</td>
+							<td data-field="ID">#759849</td>
+						</tr>
+						<tr>
+							<td data-field="순번">9</td>
+							<!-- <td data-field="실제">내용이 들어갑니다.</td>
+							<td data-field="후처리">내용이 들어갑니다.</td> -->
+							<td data-field="text-value">Front</td>
+							<td data-field="ID">#759849</td>
+						</tr>
+						<tr>
+							<td data-field="순번">8</td>
+							<!-- <td data-field="실제">내용이 들어갑니다.</td>
+							<td data-field="후처리">내용이 들어갑니다.</td> -->
+							<td data-field="text-value">Right</td>
+							<td data-field="ID">#759849</td>
 						</tr>
 					</tbody>
 				</table>
