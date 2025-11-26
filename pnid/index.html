@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>SVG VIEWER</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../fonts/NotoSansKR/NotoSansKR.css">
+	<link rel="stylesheet" href="./css/style.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+	<div class="svg-wrapper">
+		<div class="left">
+			<div class="svg-header">
+				<div class="file-link">
+					<a href="1">
+						<span class="icon icon-description"></span>
+						<span class="text">DXAX-1F-LO-PP-01</span>
+					</a>
+				</div>
+				<div class="icon-box">
+					<a href="#" class="btn btn-secondary disabled" aria-disabled="true" title="운전 절차서">
+						<span class="icon icon-arrow_split"></span>
+					</a>
+					<a href="#" class="btn btn-secondary disabled" aria-disabled="true" title="정비 절차서">
+						<span class="icon icon-construction"></span>
+					</a>
+					<a href="#" class="btn btn-secondary disabled" aria-disabled="true" title="작업 지시서">
+						<span class="icon icon-developer_guide"></span>
+					</a>
+					<a href="#" class="btn btn-secondary disabled" aria-disabled="true" title="작업 결과 보고서">
+						<span class="icon icon-lab_profile"></span>
+					</a>
+				</div>
+			</div>
+			<div id="svgarea"></div>
+		</div>
+
+		<div class="right">
+
+			<div class="selectorArea">
+				<select id="idSelector" class="form-select">
+					<option value="text">Text</option>
+					<option value="id">ID</option>
+				</select>
+				<input type="text" id="tbSearchTarget" placeholder="텍스트 또는 ID 검색" value="" class="form-control">
+				<button type="button" class="btn search" onclick="safeFilterTable()">찾기</button>
+				<button type="button" class="btn reset" onclick="handleResetTable()">복원</button>
+			</div>
+
+			<div class="table-wrapper">
+				<table id="idTable" class="table">
+					<thead>
+						<tr>
+							<th>순번</th>
+							<th>text(실제)</th>
+							<!-- <th>후처리</th>
+							<th>TEXT 값</th> -->
+							<th>ID</th>
+						</tr>
+					</thead>
+					<tbody id="idTableBody">
+						<tr>
+							<td>10</td>
+							<td>내용이 들어갑니다. 내용이 들어갑니다. 내용이 들어갑니다. 내용이 들어갑니다. 내용이 들어갑니다.</td>
+							<!-- <td>내용이 들어갑니다.</td>
+							<td>내용이 들어갑니다.</td> -->
+							<td>#759849</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+		let parser = new DOMParser();
+		let svgDoc = null;
+		let svgElement = null;
+		let panZoom = null;
+		let svgType = null;
+		let ckType = null;
+
+		const svgns = 'http://www.w3.org/2000/svg';
+
+		window.addEventListener("DOMContentLoaded", function () {
+			// 예시 : http://127.0.0.1:5500/index.html?dataPath=/pnid/0a84da95_1-7171-UM-105-002.svg
+			// 예시 : http://127.0.0.1:5500/index.html?dataPath=/pnid/G12J-11420-BM-105-001.svg&searchTag=SA
+			// url 경로로 접근 시 작동
+			//initFromUrlParams();
+			// 파일 업로드 시 작동
+			//setupFileInputHandler();
+
+		});
+
+	</script>
+</body>
+
+</html>
