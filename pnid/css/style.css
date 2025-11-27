@@ -177,6 +177,7 @@ a {
 	height: 100%;
 	margin-bottom: 0;
 	border-top: 2px solid var(--border-neutral-secondary);
+	border-bottom: 2px solid var(--border-neutral-secondary);
 }
 
 .table {
@@ -198,6 +199,7 @@ a {
 .table th,
 .table td {
 	height: 32px;
+	border-color: var(--bg-neutral-secondary);
 }
 
 /* 순번칼럼 너비 */
